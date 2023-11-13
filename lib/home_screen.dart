@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
+  // argument
   const HomeScreen(this.onStartButtonPressed, {super.key});
   final void Function() onStartButtonPressed;
 

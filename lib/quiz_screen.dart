@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:workshop_07_11/data/questions.dart';
 
 class QuizScreen extends StatefulWidget {
-  const QuizScreen(this.onStartButtonPressed, {super.key});
-  final void Function() onStartButtonPressed;
+  // name argument
+  // default argumentlar required olarak gelir
+  // name argumentlar required olarak gelmez, gerektiğinde işaretlenmesi gerekir.
+  const QuizScreen({super.key, required this.chooseAnswer});
+  final void Function(String answer) chooseAnswer;
 
   @override
   State<QuizScreen> createState() {
@@ -45,6 +48,7 @@ class _QuizState extends State<QuizScreen> {
                 (answer) {
                   return ElevatedButton(
                     onPressed: () {
+                      widget.chooseAnswer(answer);
                       changeQuiz();
                     },
                     style: ElevatedButton.styleFrom(
